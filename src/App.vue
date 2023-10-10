@@ -1,16 +1,23 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  
+    <h1>{{ title }}</h1>
+    <ModalTest></ModalTest>
+  
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+ 
+ import ModalTest from './components/ModalTest.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+ components: {ModalTest}, 
+  data() {
+    return {
+      title: 'hello world'
+    }
+  },
+ 
 }
 </script>
 
