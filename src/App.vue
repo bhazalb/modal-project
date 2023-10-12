@@ -1,7 +1,7 @@
 <template>
   
     <h1>{{ title }}</h1>
-    <ModalTest></ModalTest>
+    <ModalTest  :header="header" :text="text" />
   
 </template>
 
@@ -14,14 +14,17 @@ export default {
  components: {ModalTest}, 
   data() {
     return {
-      title: 'hello world'
+      title: 'hello world',
+      text: ' Dont miss your chance to get a gift on your first membership.',
+      header:'Sign up for the Giveaway!'
+      
     }
   },
  
 }
-</script>
+</script> 
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -29,5 +32,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+h1{
+  border-bottom: 1px solid #ddd;
+  display: inline-block;
+  padding-bottom: 10px;
+  
 }
 </style>
