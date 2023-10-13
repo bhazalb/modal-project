@@ -1,7 +1,12 @@
 <template>
   
     <h1>{{ title }}</h1>
-    <ModalTest  :header="header" :text="text" />
+    <p>Welcome..</p>
+    
+    <div v-if="showModal">
+      <ModalTest  :header="header" :text="text" theme="sale"  @close="toggleModal"/>
+    </div>
+    <button @click="toggleModal">open modal</button>
   
 </template>
 
@@ -16,8 +21,13 @@ export default {
     return {
       title: 'hello world',
       text: ' Dont miss your chance to get a gift on your first membership.',
-      header:'Sign up for the Giveaway!'
-      
+      header:'Sign up for the Giveaway!',
+      showModal: false,
+    }
+  },
+  methods: {
+    toggleModal() {
+      this.showModal = !this.showModal
     }
   },
  
