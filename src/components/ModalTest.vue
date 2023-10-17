@@ -1,8 +1,13 @@
 <template>
     <div class="backdrop" @click="closeModal">
         <div class="modal" :class="{sale : theme === 'sale'}">
-            <h1>{{  header }}</h1>
-            <p>{{ text }}</p>
+          <!--  <h1>{{  header }}</h1>
+            <p>{{ text }}</p>-->
+            <slot></slot>
+            <div class="actions">
+                <slot name="links"> </slot>
+            </div>
+
         </div>
     </div>
 </template>
@@ -52,5 +57,18 @@ export default {
     color: white;
 }.modal.sale h1{
     color: rgb(4, 5, 85);
+}
+.modal .actions{
+    text-align: center;
+    margin: 30px 0 10px 0;
+    color: rgb(78, 45, 59);
+}
+.modal .actions a{
+    color: rgb(78, 45, 59);
+    padding: 8px;
+    border: 1px solid #eeee;
+    border-radius: 4px;
+    text-decoration: none;
+    margin: 10px;
 }
 </style>
