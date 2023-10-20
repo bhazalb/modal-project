@@ -7,6 +7,10 @@
             <div class="actions">
                 <slot name="links"> </slot>
             </div>
+            
+            <div class="actions">
+           <slot name="linksTwo"></slot>
+            </div>
 
         </div>
     </div>

@@ -14,7 +14,22 @@
 </ModalTest>
     </div>
     <button @click="toggleModal">open modal</button>
+    <button @click="toggleModalTwo">Detail</button>
+   
+    <div v-if="showModalTwo" >
+      <ModalTest  @close="toggleModalTwo">
+        <template v-slot:linksTwo>
+        <a href="#">Okey</a>
+        <a href="#">No , thanks</a>
+        </template>
+
+        <p>Dont miss your chance to get a gift on your first membership.</p>
+      </ModalTest>
+      
+    </div>
   
+
+
 </template>
 
 <script>
@@ -30,11 +45,15 @@ export default {
       text: ' Dont miss your chance to get a gift on your first membership.',
       header:'Sign up for the Giveaway!',
       showModal: false,
+      showModalTwo: false,
     }
   },
   methods: {
     toggleModal() {
       this.showModal = !this.showModal
+    }, 
+    toggleModalTwo(){
+      this.showModalTwo = !this.showModalTwo
     }
   },
  
@@ -55,5 +74,16 @@ h1{
   display: inline-block;
   padding-bottom: 10px;
   
+}
+button{
+  width: 90px;
+  height: 45px;
+  background-color: black;
+  border-radius: 4px;
+  border: none;
+  color: #ddd;
+  margin: 5px;
+  cursor: pointer;
+
 }
 </style>
